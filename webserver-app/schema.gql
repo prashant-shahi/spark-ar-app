@@ -1,0 +1,9 @@
+image_url: string @index(exact) .
+
+product.name: string @index(term, exact) @lang .
+price: int @index(int) .
+description: string @index(term) .
+
+company.name: string @index(term, exact) @lang .
+location: string @index(exact) .
+products: uid @reverse .
