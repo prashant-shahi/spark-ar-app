@@ -261,9 +261,9 @@ app.use('/send-sms', (req, res) => {
     // }
 
     var message = `Hey Folks! Wondering what's trending?\nBe sure to check out the link below for an eye-candy surprise: \n\n`+fetchSparkVRLink();
-    var receiver = "7760579605";
-    //var receiver = "9740210236";
-    //var receiver = "8880517895";
+    var receiver = "  88XXXXXX95";
+    //var receiver = "97XXXXXX36";
+    //var receiver = "88XXXXXX95";
     var options = {
         "method": "POST",
         "hostname": "api.msg91.com",
@@ -346,10 +346,11 @@ app.use('/', (req, res) => res.json({
 var vr_url_counter = 0;
 
 function fetchSparkVRLink() {
-    var urls=["https://www.facebook.com/fbcameraeffects/testit/358025891811326/MWUxMTkzMjZkOTJlMzhkYjQyMGVhMWI4OTcyZWJhYTE=/", 
-        "https://www.facebook.com/fbcameraeffects/testit/365467284392204/ZmFhMWIwYTZiM2MxMTViODE2NmM3MTRkZDIxZjNmZGE=/", 
-        "https://www.facebook.com/fbcameraeffects/testit/358025891811326/MWUxMTkzMjZkOTJlMzhkYjQyMGVhMWI4OTcyZWJhYTE=/", 
-        "https://www.facebook.com/fbcameraeffects/testit/365467284392204/ZmFhMWIwYTZiM2MxMTViODE2NmM3MTRkZDIxZjNmZGE=/"]
+    var urls = [
+        "https://www.facebook.com/fbcameraeffects/testit/438289630364602/NTA1MDEzOGVhYWZlMmFlZmVlYjVhMGIwN2E2ZjdiODc=/",    // Shoes
+        "https://www.facebook.com/fbcameraeffects/testit/393249531330287/Y2ZlYjYzN2U3MjgyOWRhY2RkNDlmNjYwOGM5ZmRmZDY=/",    // Camera
+        "https://www.facebook.com/fbcameraeffects/testit/676431532852798/NDA4MmQ0YTZmYTJiZjJkNjQ4ODc2MmE5MTk5NjE2MDg=/"     // Chair
+    ]
 
     if(vr_url_counter >= urls.length)  {
         vr_url_counter = 0;
@@ -361,8 +362,7 @@ function fetchSparkVRLink() {
 async function sendWhatsAppMsg() {
     // URL for request POST /message
     var url = 'https://eu52.chat-api.com/instance61302/message?token=nlgi3t0coxe6imrq';
-    var receiver = "+917760579605";
-    //var receiver = "+919740210236";
+    var receiver = "+9188XXXXXX95";
     var message = `Hey Folks! Wondering what's trending?\n\nBe sure to check out the link below for an eye-candy surprise: \n\n`+fetchSparkVRLink();
     var data = {
         phone: receiver, // Receivers phone
