@@ -12,6 +12,7 @@ const app = express();
 // Web server port
 const port = process.env.PORT || "8888";
 const msg91authkey = process.env.MSG91AUTHKEY || null;
+const whatsapptoken = process.env.WHATSAPPTOKEN || null;
 
 // Creating dgraph client
 const dgraph_address = process.env.DGRAPH_SERVER || "localhost:9080";
@@ -261,7 +262,8 @@ app.use('/send-sms', (req, res) => {
     // }
 
     var message = `Hey Folks! Wondering what's trending?\nBe sure to check out the link below for an eye-candy surprise: \n\n`+fetchSparkVRLink();
-    var receiver = "  88XXXXXX95";
+    var receiver = "94XXXXXX44";
+    //var receiver = "88XXXXXX95";
     //var receiver = "97XXXXXX36";
     //var receiver = "88XXXXXX95";
     var options = {
@@ -361,8 +363,8 @@ function fetchSparkVRLink() {
 // Sending whatsapp message.
 async function sendWhatsAppMsg() {
     // URL for request POST /message
-    var url = 'https://eu52.chat-api.com/instance61302/message?token=nlgi3t0coxe6imrq';
-    var receiver = "+9188XXXXXX95";
+    var url = 'https://eu52.chat-api.com/instance61302/message?token='+whatsapptoken;
+    var receiver = "+9194XXXXXX44";
     var message = `Hey Folks! Wondering what's trending?\n\nBe sure to check out the link below for an eye-candy surprise: \n\n`+fetchSparkVRLink();
     var data = {
         phone: receiver, // Receivers phone
