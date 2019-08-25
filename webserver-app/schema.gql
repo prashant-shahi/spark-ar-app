@@ -3,7 +3,10 @@ image_url: string @index(exact) .
 product.name: string @index(term, exact) @lang .
 price: int @index(int) .
 description: string @index(term) .
+tags: uid @reverse .
 
 company.name: string @index(term, exact) @lang .
 location: string @index(exact) .
 products: uid @reverse .
+
+tag.name: string @index(term, exact) @lang .
